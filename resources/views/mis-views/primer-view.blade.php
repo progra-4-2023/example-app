@@ -7,7 +7,7 @@
 
         
 @section('content')
-
+        Area VIP<br/>
         <p>Contador de session: {{$session_counter}}</p>
         <p>Contador de cache: {{$cache_counter}}</p>
         {{$texto}}
