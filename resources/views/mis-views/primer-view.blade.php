@@ -10,6 +10,7 @@
         Area VIP<br/>
         <p>Contador de session: {{$session_counter}}</p>
         <p>Contador de cache: {{$cache_counter}}</p>
+        <p>Otra linea</p>
         {{$texto}}
         <form method="GET">
             @csrf
