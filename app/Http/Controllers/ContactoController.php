@@ -2,11 +2,15 @@
 namespace App\Http\Controllers;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Http\Request;
+use App\Mail\ContactoRecibido;
+use Illuminate\Support\Facades\Mail;
 class ContactoController extends BaseController
 {
     public function index()
     {
-        return view('mis-views.contacto');
+        return view('mis-views.contacto',
+            ['name'=>'Dayle']
+        );
     }
     public function send(Request $request)
     {
@@ -18,6 +22,9 @@ class ContactoController extends BaseController
         ]);
         
         //enviar mensaje
+        $input = $request->input();
+        Mail::send(new ContactoRecibido($input));
+
         
         return redirect(route('contactado'), 302);
 

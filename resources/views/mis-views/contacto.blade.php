@@ -1,5 +1,9 @@
 @extends('my-layout.my-app')
 @section('content')
+    <h1>{{ __('messages.welcome') }}</h1>
+    <p>
+    {{ __('messages.please_fill', ['name' => $name]) }}
+</p>
     <form method="POST">
 
         @if ($errors->any())
